@@ -11,6 +11,7 @@ import (
 
 // c is the Gin Context
 
+// Index page handler
 func showIndexPage(c *gin.Context) {
 	articles := getAllArticles()
 
@@ -18,6 +19,16 @@ func showIndexPage(c *gin.Context) {
 	render(c, gin.H{
 		"title":   "Home Page",
 		"payload": articles}, "index.html")
+
+}
+
+// ShowContactPage function returns the Contact info of Admin
+func showContactPage(c *gin.Context) {
+	// articles := getAllArticles()
+
+	// Call the render function with the name of the template to render
+	render(c, gin.H{
+		"title": "Contact Page"}, "contact.html")
 
 }
 
